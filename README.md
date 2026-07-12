@@ -1,37 +1,88 @@
-# 🚚 TransitOps - Smart Transport Operations Platform
+# 🚚 TransitOps – Smart Transport Operations Platform
 
-TransitOps is a transport management system developed as part of the **Odoo Hackathon 2026**. The application is designed to help organizations manage their vehicles, drivers, trips, maintenance activities, and operational expenses from a single platform.
+A full-stack transport management system developed for the **Odoo Hackathon 2026**.
 
-The project focuses on simplifying transport operations through a centralized dashboard, role-based access, and automated workflows.
-
----
-
-## Problem Statement
-
-Build a Smart Transport Operations Platform that digitizes fleet management by providing modules for vehicle management, driver management, trip scheduling, maintenance tracking, fuel & expense logging, and operational analytics.
+TransitOps is designed to help organizations efficiently manage their transport operations by providing a centralized platform for vehicle management, driver management, trip scheduling, maintenance tracking, fuel & expense logging, and operational analytics.
 
 ---
 
-## Features
+## 📌 Problem Statement
 
-- User Authentication & Role-Based Access
-- Dashboard with operational KPIs
+Build a Smart Transport Operations Platform that digitizes fleet operations by providing modules for:
+
 - Vehicle Management
 - Driver Management
-- Trip Creation & Tracking
-- Maintenance Management
-- Fuel & Expense Tracking
-- Reports & Analytics
-- Business Rule Validations
+- Trip Management
+- Maintenance Tracking
+- Fuel & Expense Management
+- Dashboard & Analytics
+
+The platform aims to reduce manual work, improve operational efficiency, and automate important transport workflows.
 
 ---
 
-## Tech Stack
+## 🎯 Project Goals
+
+- Develop a modular and scalable full-stack application.
+- Follow clean coding standards and reusable architecture.
+- Design a well-structured database.
+- Implement proper business rule validations.
+- Build a responsive and user-friendly interface.
+- Maintain consistent Git workflow throughout the hackathon.
+
+---
+
+## ✨ Features
+
+### Authentication
+- Secure Login
+- Role-Based Access Control (RBAC)
+
+### Dashboard
+- Fleet KPIs
+- Active Trips
+- Vehicle Availability
+- Drivers on Duty
+- Fleet Utilization
+
+### Vehicle Management
+- Register Vehicles
+- Update Vehicle Details
+- Vehicle Status Tracking
+
+### Driver Management
+- Driver Registration
+- License Validation
+- Driver Status Management
+
+### Trip Management
+- Create & Dispatch Trips
+- Cargo Capacity Validation
+- Automatic Status Updates
+
+### Maintenance
+- Vehicle Maintenance Records
+- Maintenance Workflow
+- Automatic Vehicle Status Changes
+
+### Fuel & Expense Management
+- Fuel Logs
+- Expense Tracking
+- Operational Cost Calculation
+
+### Reports
+- Fleet Reports
+- Fuel Efficiency
+- Operational Analytics
+
+---
+
+## 🛠 Tech Stack
 
 ### Frontend
 - React.js
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 
 ### Backend
@@ -39,7 +90,7 @@ Build a Smart Transport Operations Platform that digitizes fleet management by p
 - Express.js
 
 ### Database
-- MongoDB
+- MongoDB Atlas
 
 ### Tools
 - Git
@@ -48,7 +99,7 @@ Build a Smart Transport Operations Platform that digitizes fleet management by p
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 TransitOps/
@@ -57,23 +108,59 @@ TransitOps/
 ├── backend/
 ├── docs/
 ├── screenshots/
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## Team Members
+## 💡 Development Guidelines
 
-| Name | Role |
-|------|------|
-| Suraj Singh | Team Leader |
-| Suryansh Vashistha | Team Member |
-| Vansh Gupta | Team Member |
-| Saumitra Misra | Team Member |
+During development, our team focuses on:
+
+- Clean and modular project structure
+- Proper database design
+- Dynamic data using MongoDB
+- Strong backend and frontend validation
+- Responsive and consistent UI
+- Meaningful Git commits
+- Regular code integration into the main branch
 
 ---
 
-## Getting Started
+## 🗄 Database Design
+
+The application is designed around the following core entities:
+
+- Users
+- Roles
+- Vehicles
+- Drivers
+- Trips
+- Maintenance Logs
+- Fuel Logs
+- Expenses
+
+---
+
+## 🔒 Input Validation
+
+The application validates user input at both frontend and backend levels.
+
+Examples include:
+
+- Required field validation
+- Email validation
+- Vehicle capacity validation
+- Driver availability checks
+- License expiry validation
+- Trip business rule validation
+
+Proper error messages are displayed to improve user experience.
+
+---
+
+## 🚀 Getting Started
 
 Clone the repository
 
@@ -99,12 +186,33 @@ npm run dev
 
 ---
 
-## Current Status
+## 👥 Team
 
-This project is being developed during the **Odoo Hackathon 2026**. New features and improvements will be added throughout the hackathon.
+| Name | Role |
+|------|------|
+| Suraj Singh | Team Leader |
+| Suryansh Vashistha | Team Member |
+| Vansh Gupta | Team Member |
+| Saumitra Misra | Team Member |
 
 ---
 
-## License
+## 📌 Git Workflow
+
+- Single public GitHub repository
+- Latest working code maintained on the `main` branch
+- Every team member commits using their own GitHub account
+- Regular commits with meaningful commit messages
+- Continuous collaboration and code integration throughout the hackathon
+
+---
+
+## 📈 Current Status
+
+This project is currently under active development as part of the **Odoo Hackathon 2026**. Features will be implemented incrementally following the project timeline.
+
+---
+
+## 📄 License
 
 This project is developed for educational and hackathon purposes.
