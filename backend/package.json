@@ -1,0 +1,1 @@
+{"name":"transitops-ai-api","version":"1.0.0","scripts":{"start":"node server.js","import:data":"node scripts/import-logistics-data.js"}}

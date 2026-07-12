@@ -1,218 +1,46 @@
-# 🚚 TransitOps – Smart Transport Operations Platform
+# TransitOps AI
 
-A full-stack transport management system developed for the **Odoo Hackathon 2026**.
+TransitOps AI is a dark, responsive fleet-operations SaaS prototype built for hackathon evaluation. It combines a premium command-centre UI with server-side validation, persistent demo data, dispatch business rules, AI-style operational guidance, and a production PostgreSQL schema.
 
-TransitOps is designed to help organizations efficiently manage their transport operations by providing a centralized platform for vehicle management, driver management, trip scheduling, maintenance tracking, fuel & expense logging, and operational analytics.
+## Running application
 
----
+The application is running locally at **http://localhost:5050**.
 
-## 📌 Problem Statement
-
-Build a Smart Transport Operations Platform that digitizes fleet operations by providing modules for:
-
-- Vehicle Management
-- Driver Management
-- Trip Management
-- Maintenance Tracking
-- Fuel & Expense Management
-- Dashboard & Analytics
-
-The platform aims to reduce manual work, improve operational efficiency, and automate important transport workflows.
-
----
-
-## 🎯 Project Goals
-
-- Develop a modular and scalable full-stack application.
-- Follow clean coding standards and reusable architecture.
-- Design a well-structured database.
-- Implement proper business rule validations.
-- Build a responsive and user-friendly interface.
-- Maintain consistent Git workflow throughout the hackathon.
-
----
-
-## ✨ Features
-
-### Authentication
-- Secure Login
-- Role-Based Access Control (RBAC)
-
-### Dashboard
-- Fleet KPIs
-- Active Trips
-- Vehicle Availability
-- Drivers on Duty
-- Fleet Utilization
-
-### Vehicle Management
-- Register Vehicles
-- Update Vehicle Details
-- Vehicle Status Tracking
-
-### Driver Management
-- Driver Registration
-- License Validation
-- Driver Status Management
-
-### Trip Management
-- Create & Dispatch Trips
-- Cargo Capacity Validation
-- Automatic Status Updates
-
-### Maintenance
-- Vehicle Maintenance Records
-- Maintenance Workflow
-- Automatic Vehicle Status Changes
-
-### Fuel & Expense Management
-- Fuel Logs
-- Expense Tracking
-- Operational Cost Calculation
-
-### Reports
-- Fleet Reports
-- Fuel Efficiency
-- Operational Analytics
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-- React.js
-- HTML5
-- CSS3
-- JavaScript
-
-### Backend
-- Node.js
-- Express.js
-
-### Database
-- MongoDB Atlas
-
-### Tools
-- Git
-- GitHub
-- Postman
-
----
-
-## 📂 Project Structure
-
-```
-TransitOps/
-│
-├── frontend/
-├── backend/
-├── docs/
-├── screenshots/
-├── README.md
-└── .gitignore
-```
-
----
-
-## 💡 Development Guidelines
-
-During development, our team focuses on:
-
-- Clean and modular project structure
-- Proper database design
-- Dynamic data using MongoDB
-- Strong backend and frontend validation
-- Responsive and consistent UI
-- Meaningful Git commits
-- Regular code integration into the main branch
-
----
-
-## 🗄 Database Design
-
-The application is designed around the following core entities:
-
-- Users
-- Roles
-- Vehicles
-- Drivers
-- Trips
-- Maintenance Logs
-- Fuel Logs
-- Expenses
-
----
-
-## 🔒 Input Validation
-
-The application validates user input at both frontend and backend levels.
-
-Examples include:
-
-- Required field validation
-- Email validation
-- Vehicle capacity validation
-- Driver availability checks
-- License expiry validation
-- Trip business rule validation
-
-Proper error messages are displayed to improve user experience.
-
----
-
-## 🚀 Getting Started
-
-Clone the repository
-
-```bash
-git clone https://github.com/<username>/TransitOps-Odoo-Hackathon-2026.git
-```
-
-Install backend dependencies
-
-```bash
-cd backend
-npm install
+```powershell
+cd D:\TransitOps-Odoo-Hackathon-2026\backend
 npm start
 ```
 
-Install frontend dependencies
+It has no external runtime dependency for the demo, so it starts with Node.js alone.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## What is implemented
 
----
+- Responsive purple-on-black fleet dashboard inspired by the supplied reference
+- Dynamic dashboard, vehicles, drivers, trips, maintenance, expenses, analytics, settings, and AI assistant views
+- Persistent local demo store (`backend/data/database.json`) that survives server restarts
+- REST API endpoints for dashboard data, fleet records, vehicles, dispatching, AI chat, and validated login
+- Graceful validation feedback for invalid email/password, invalid vehicle details, missing trip details, unavailable assets, expired licences, and excess cargo capacity
+- Dispatch business rules that update vehicle and driver statuses atomically in the local demo store
+- AI copilot endpoint with fleet availability, fuel-cost, licence-expiry, and health responses
+- Command palette (`Ctrl+K`), notifications, toasts, modal workflows, role-aware settings presentation, and responsive navigation
 
-## 👥 Team
+## Database design
 
-| Name | Role |
-|------|------|
-| Suraj Singh | Team Leader |
-| Suryansh Vashistha | Team Member |
-| Vansh Gupta | Team Member |
-| Saumitra Misra | Team Member |
+[`database/schema.postgres.sql`](database/schema.postgres.sql) contains the production PostgreSQL design: enums, UUID primary keys, foreign keys, check constraints, unique constraints, and indexes for operational queries. The included JSON store is an intentionally dependency-free local adapter for a runnable demo; replace `backend/lib/store.js` with a PostgreSQL/Supabase repository using that schema and environment credentials for deployment.
 
----
+## API samples
 
-## 📌 Git Workflow
+| Route | Purpose |
+| --- | --- |
+| `GET /api/dashboard` | Dynamic dashboard aggregates and activity feed |
+| `GET /api/vehicles`, `/api/drivers`, `/api/trips` | Operational records |
+| `POST /api/vehicles` | Validated vehicle creation |
+| `POST /api/trips` | Validated dispatch with safety/business checks |
+| `POST /api/auth/login` | Validated login endpoint |
+| `POST /api/ai/chat` | Fleet copilot answers |
 
-- Single public GitHub repository
-- Latest working code maintained on the `main` branch
-- Every team member commits using their own GitHub account
-- Regular commits with meaningful commit messages
-- Continuous collaboration and code integration throughout the hackathon
+## Verification completed
 
----
-
-## 📈 Current Status
-
-This project is currently under active development as part of the **Odoo Hackathon 2026**. Features will be implemented incrementally following the project timeline.
-
----
-
-## 📄 License
-
-This project is developed for educational and hackathon purposes.
+- JavaScript syntax checks passed for frontend and backend.
+- `GET /api/dashboard` returned seeded live state.
+- Invalid login returned `422` and a valid login returned `200`.

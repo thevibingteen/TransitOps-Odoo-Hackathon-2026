@@ -1,0 +1,6 @@
+{
+  "name": "transitops-ai-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TransitOps AI dashboard client"
+}
