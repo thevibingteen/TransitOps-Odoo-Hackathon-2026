@@ -150,11 +150,11 @@ The application validates user input at both frontend and backend levels.
 Examples include:
 
 - Required field validation
+- License expiry validation
+- Trip business rule validation
 - Email validation
 - Vehicle capacity validation
 - Driver availability checks
-- License expiry validation
-- Trip business rule validation
 
 Proper error messages are displayed to improve user experience.
 
@@ -191,8 +191,8 @@ npm run dev
 | Name | Role |
 |------|------|
 | Suraj Singh | Team Leader |
-| Suryansh Vashistha | Team Member |
 | Vansh Gupta | Team Member |
+| Suryansh Vashistha | Team Member |
 | Saumitra Misra | Team Member |
 
 ---
